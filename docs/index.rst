@@ -6,6 +6,10 @@
 Welcome to Pictograph's documentation!
 ======================================
 
+This is the documentation for Pictograph. For source code access, head over to `our site on GitHub`_. 
+
+.. _our site on GitHub: https://github.com/arichar6/pictograph
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
