@@ -2,6 +2,8 @@
 
 This README gives some info about what Pictograph is, and how it works.
 
+[![DOI](https://zenodo.org/badge/130230996.svg)](https://zenodo.org/badge/latestdoi/130230996)
+
 ### What is Pictograph ###
 
 **Pictograph** is a graphical interface for connecting and running small pieces of python code. At its core it is meant to provide a rich, graphical, way to create and run workflows, called _pictographs_. These pictographs are created by chaining together _nodes_ or glyphs; it's a visual way to create computer programs. Each glyph represents a small piece of python code, and visually shows its inputs and output as anchors which can be connected to other nodes. Each input is connected to the output of a single other node, and each output can be connected to multiple nodes. The "ready state" of each node is recorded and automatically communicated to all connected nodes, thus allowing the computations represented by the pictograph to proceed automatically once all inputs are defined.
