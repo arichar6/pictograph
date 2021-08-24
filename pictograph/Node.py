@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 A node/glyph, which is the basic processing unit in a pictograph/flowchart/canvas
 """
@@ -25,7 +24,7 @@ class Node(ABC):
     output_now_valid_message = 0
     output_now_invalid_message = 1
     
-    def __init__(self):
+    def __init__(self, auto_process=False, **kwargs):
         # This looks like a dict of arguments to a function, but every argument is a Node
         self._input_terminals = {}
 
@@ -40,7 +39,7 @@ class Node(ABC):
         self.displayName = ""
         self._output_data_cache = None
         self._is_output_valid = False
-        self._auto_process = False
+        self._auto_process = auto_process
         self._adjustable_parameters = {}
 
     # -------- Private API ---------

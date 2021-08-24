@@ -4,7 +4,7 @@ Nodes which know about numpy arrays
 """
 from pictograph.Node import Node, AdjustableParameter
 import numpy as np
-from PyQt5 import QtCore, QtWidgets, QtGui
+
 
 class ZerosNode(Node):
     def __init__(self):
@@ -40,24 +40,3 @@ class npVectorNode(Node):
     def _process_core(self):
         self._output_data_cache = self._adjustable_parameters["Vector"]._value
         return self._output_data_cache
-
-#     def as_widget(self):
-#         labelWidget = QtWidgets.QLabel("Here's a plot:")
-# 
-#         f = plt.figure()
-#         c = FigureCanvas(f)
-#         # t = NavigationToolbar(c, c)
-# 
-#         f.clear()
-# 
-#         # create an axis
-#         ax = f.add_subplot(111)
-# 
-#         # plot data
-#         ax.plot(self._output_data_cache, '*-')
-# 
-#         # refresh canvas
-#         c.draw()
-# 
-#         return labelWidget, c
-

@@ -2,8 +2,8 @@ from pictograph.Node import Node, AdjustableParameter
 
 
 class AdditionNode(Node):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
         self.displayName = "Add"
         self.description = "Adds two input values"
         self._input_terminals = {"arg1": None, "arg2": None}
@@ -13,8 +13,8 @@ class AdditionNode(Node):
 
 
 class NumberNode(Node):
-    def __init__(self, the_value=0):
-        super().__init__()
+    def __init__(self, the_value=0, **kwargs):
+        super().__init__(**kwargs)
         self.displayName = "Number"
         self.description = "A constant numerical value"
         self._adjustable_parameters = {'Number': AdjustableParameter(name="Number", type="double", val=the_value)}
@@ -27,8 +27,8 @@ class NumberNode(Node):
 
 
 class IntegerNode(Node):
-    def __init__(self, the_value=0):
-        super().__init__()
+    def __init__(self, the_value=0, **kwargs):
+        super().__init__(**kwargs)
         self.displayName = "Integer"
         self.description = "A constant integer"
         self._adjustable_parameters = {"Integer": AdjustableParameter(name="Integer", type="int", val=the_value)}
@@ -41,13 +41,13 @@ class IntegerNode(Node):
 
 
 class PrinterNode(Node):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
         self.displayName = "Print"
         self.description = "A printer, with no output values"
         self._output_data_cache = None
         self._is_output_valid = False
-        self._input_terminals = {"arg1":None}
+        self._input_terminals = {"arg1": None}
         self._has_output = False
         
     def _process_core(self):
@@ -63,8 +63,8 @@ class PrinterNode(Node):
 
 
 class SubtractionNode(Node):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
         self.displayName = "Subtract"
         self.description = "Subtracts two input values"
         self._input_terminals = {"arg1":None, "arg2":None}
@@ -74,8 +74,8 @@ class SubtractionNode(Node):
 
 
 class MultiplicationNode(Node):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
         self.displayName = "Multiply"
         self.description = "Multiplies two input values"
         self._input_terminals = {"arg1":None, "arg2":None}
@@ -85,10 +85,15 @@ class MultiplicationNode(Node):
 
 
 class StringNode(Node):
-    def __init__(self, the_value=""):
-        super().__init__()
+    def __init__(self, the_value="", **kwargs):
+        super().__init__(**kwargs)
         self.displayName = "String"
-        self._adjustable_parameters = {"String": AdjustableParameter(name="String", type="string", val=the_value)}
+        self._adjustable_parameters = {
+            "String": 
+            AdjustableParameter(name="String", 
+                                type="string", 
+                                val=the_value)
+            }
         self._output_data_cache = self._adjustable_parameters["String"]._value
         self._is_output_valid = True
         
@@ -98,8 +103,8 @@ class StringNode(Node):
 
 
 class StringFormatNode(Node):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
         self.displayName = "Format"
         self.description = "Format a string"
         self._input_terminals = {"arg1": None, "arg2": None}
