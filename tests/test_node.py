@@ -20,3 +20,5 @@ def test_addition():
     a.connect_input('arg2', nodes[1])
     a.process()
     assert a._output_data_cache == 8.0
+    nodes[0]._adjust_parameter('Number', 1.0)
+    assert a._output_data_cache == 6.5
