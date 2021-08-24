@@ -1,3 +1,5 @@
 docs/_build/*
 .vscode/*
 *.pyc
+.eggs/*
+pictograph.egg-info/*
