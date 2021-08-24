@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Nodes which know about numpy arrays
 """
